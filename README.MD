@@ -1,0 +1,1 @@
+Clone this git repository and adapt the local p2 repository URL in the parent pom accordingly.

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+    xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.test</groupId>
+    <artifactId>com.test.parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <tycho.version>2.7.0</tycho.version>
+        <!-- it used to work before -->
+        <!-- <tycho.version>0.22.0</tycho.version> -->
+
+        <eclipse-repository-url>https://download.eclipse.org/eclipse/updates/4.6</eclipse-repository-url>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>eclipse46</id>
+            <layout>p2</layout>
+            <url>${eclipse-repository-url}</url>
+        </repository>
+        <repository>
+            <id>sampleRepository</id>
+            <layout>p2</layout>
+            <url>file:///C:/github/tycho-issue-new/sampleRepository/</url>
+        </repository>
+        <repository>
+            <id>oldRepository</id>
+            <layout>p2</layout>
+            <url>file:///C:/github/tycho-issue-new/oldRepository/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>tycho-snapshots</id>
+            <url>https://repo.eclipse.org/content/repositories/tycho-snapshots/</url>
+        </pluginRepository>
+    </pluginRepositories>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-maven-plugin</artifactId>
+                <version>${tycho.version}</version>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <modules>
+        <module>sample.feature</module>
+        <module>sample.product</module>
+    </modules>
+</project>
